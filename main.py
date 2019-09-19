@@ -1,7 +1,6 @@
 """This is the main file from which the game is launched"""
 import pygame
 import game
-import constant
 
 
 def main():
@@ -32,22 +31,26 @@ def main():
                     play = False
 
                 if control[pygame.K_LEFT] and \
-                        game.Labyrinth.maze[level_1.MacGyver.pos_y][level_1.MacGyver.pos_x - 1] == '0':
+                        game.Labyrinth.maze[level_1.MacGyver.pos_y][level_1.MacGyver.pos_x - 1] \
+                            == '0':
                     level_1.MacGyver.pos_x -= 1
                 if control[pygame.K_RIGHT] and \
-                        game.Labyrinth.maze[level_1.MacGyver.pos_y][level_1.MacGyver.pos_x + 1] == '0':
+                        game.Labyrinth.maze[level_1.MacGyver.pos_y][level_1.MacGyver.pos_x + 1] \
+                            == '0':
                     level_1.MacGyver.pos_x += 1
                 if control[pygame.K_UP] and \
-                        game.Labyrinth.maze[level_1.MacGyver.pos_y - 1][level_1.MacGyver.pos_x] == '0':
+                        game.Labyrinth.maze[level_1.MacGyver.pos_y - 1][level_1.MacGyver.pos_x] \
+                            == '0':
                     level_1.MacGyver.pos_y -= 1
                 if control[pygame.K_DOWN] and \
-                        game.Labyrinth.maze[level_1.MacGyver.pos_y + 1][level_1.MacGyver.pos_x] == '0':
+                        game.Labyrinth.maze[level_1.MacGyver.pos_y + 1][level_1.MacGyver.pos_x] \
+                            == '0':
                     level_1.MacGyver.pos_y += 1
 
                 level_1.MacGyver.take_object(level_1.Plastic)
                 level_1.MacGyver.take_object(level_1.Ether)
                 level_1.MacGyver.take_object(level_1.Needle)
                 level_1.win_or_lose()
-    
+
 
 main()
