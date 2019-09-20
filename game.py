@@ -1,6 +1,5 @@
-"""Here is the Labyrinth :
-first i created a 2d list first list is the raw and second the col.
-Then i choose letter and numbers to set the labyrinth.
+"""This is the module where i set all the classes for the main file.
+it has the item, heros and labyrinth(level) classes
 """
 import os
 import random
