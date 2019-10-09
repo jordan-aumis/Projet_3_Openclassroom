@@ -1,7 +1,6 @@
 """This is the module where i set all the classes for the main file.
 it has the item, heros and labyrinth(level) classes
 """
-import os
 import random
 import time
 import pygame
@@ -81,21 +80,6 @@ class Labyrinth:
     Needle.random_position(maze)
     Ether.random_position(maze)
     Plastic.random_position(maze)
-    structure = {
-        'needle_img': pygame.image.load(os.path.join('ressource', 'aiguille.png')),
-        'plastic_tube_img': pygame.image.load(os.path.join('ressource', 'tube_plastique.png')),
-        'ether_img': pygame.image.load(os.path.join('ressource', 'ether.png')),
-        'mc_gyver_img': pygame.image.load(os.path.join('ressource', 'MacGyver.png')),
-        'guard_img': pygame.image.load(os.path.join('ressource', 'Gardien.png')),
-        'top_left_corner': pygame.image.load(os.path.join('ressource', 'TopLeftCorner.png')),
-        'top_right_corner': pygame.image.load(os.path.join('ressource', 'TopRightCorner.png')),
-        'top_middle': pygame.image.load(os.path.join('ressource', 'MiddleTop.png')),
-        'bot_right_corner': pygame.image.load(os.path.join('ressource', 'BottomRigthCorner.png')),
-        'bot_left_corner': pygame.image.load(os.path.join('ressource', 'BottomLeftCorner.png')),
-        'bot_middle': pygame.image.load(os.path.join('ressource', 'MiddleBot.png')),
-        'left_middle': pygame.image.load(os.path.join('ressource', 'MiddleLeft.png')),
-        'right_middle': pygame.image.load(os.path.join('ressource', 'MiddleRight.png')),
-        'maze_wall': pygame.image.load(os.path.join('ressource', 'wall.png'))}
 
     @classmethod
     def sprite(cls, wall_image, pos_x, pos_y):
@@ -156,38 +140,38 @@ class Labyrinth:
                 screen_raw = index_col * 25
                 screen_col = index_raw * 25
                 if case_value == '1':
-                    self.sprite(self.structure['top_middle'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['top_middle'], screen_raw, screen_col)
 
                 elif case_value == '2':
-                    self.sprite(self.structure['top_left_corner'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['top_left_corner'], screen_raw, screen_col)
 
                 elif case_value == '3':
-                    self.sprite(self.structure['bot_left_corner'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['bot_left_corner'], screen_raw, screen_col)
 
                 elif case_value == '4':
-                    self.sprite(self.structure['bot_right_corner'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['bot_right_corner'], screen_raw, screen_col)
 
                 elif case_value == '6':
-                    self.sprite(self.structure['left_middle'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['left_middle'], screen_raw, screen_col)
 
                 elif case_value == '5':
-                    self.sprite(self.structure['top_right_corner'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['top_right_corner'], screen_raw, screen_col)
 
                 elif case_value == '7':
-                    self.sprite(self.structure['right_middle'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['right_middle'], screen_raw, screen_col)
 
                 elif case_value == 'X':
-                    self.sprite(self.structure['bot_middle'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['bot_middle'], screen_raw, screen_col)
 
                 elif case_value == 'M':
-                    self.sprite(self.structure['maze_wall'], screen_raw, screen_col)
+                    self.sprite(constant.STRUCTURE['maze_wall'], screen_raw, screen_col)
 
-        self.Needle.draw_objet(self.structure['needle_img'])
-        self.Plastic.draw_objet(self.structure['plastic_tube_img'])
-        self.Ether.draw_objet(self.structure['ether_img'])
+        self.Needle.draw_objet(constant.STRUCTURE['needle_img'])
+        self.Plastic.draw_objet(constant.STRUCTURE['plastic_tube_img'])
+        self.Ether.draw_objet(constant.STRUCTURE['ether_img'])
 
-        self.MacGyver.draw_hero(self.structure['mc_gyver_img'])
-        self.sprite(self.structure['guard_img'], self.guard_pos_x * 25, self.guard_pos_y * 25)
+        self.MacGyver.draw_hero(constant.STRUCTURE['mc_gyver_img'])
+        self.sprite(constant.STRUCTURE['guard_img'], self.guard_pos_x * 25, self.guard_pos_y * 25)
 
         self.text("ITEM: {}".format(self.MacGyver.object_count), constant.YELLOW)
 
