@@ -20,4 +20,4 @@ Pour lancer le jeu il suffit de vous mettre a la racine du dossier et de lancer 
 
 'python main.py'
 
-Bonne jeu !
+Bon jeu !
